@@ -1,0 +1,28 @@
+@startuml gestion_empleado
+package gestion_empleado {
+
+    class Empleado {
+        - nombre : String
+        - apellido : String
+        - documento : String
+        + mostrarDatos() : void
+        + calcularSalario() : double
+    }
+
+    class EmpleadoFijo {
+        - salarioMensual : double
+        + calcularSalario() : double
+    }
+
+    class EmpleadoPorHoras {
+        - horasTrabajadas : int
+        - tarifaPorHora : double
+        + calcularSalario() : double
+    }
+
+    Empleado <|-- EmpleadoFijo
+    Empleado <|-- EmpleadoPorHoras
+}
+@enduml
+
+// Ctrl + Shift + P -> PlantUML: Preview Current Diagram
